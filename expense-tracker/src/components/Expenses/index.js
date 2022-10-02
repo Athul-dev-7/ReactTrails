@@ -4,13 +4,17 @@ import ExpensesStyled from './style';
 
 const Expenses = (props) => {
     return (
-        <ExpensesStyled>
-            <ExpenseItem
-                title={props.items.title}
-                amount={props.items.amount}
-                date={props.items.date}
-            />
-        </ExpensesStyled>
+        <>
+            <ExpensesStyled>
+                {props.items.map((obj) => (
+                    <ExpenseItem
+                        title={obj.title}
+                        amount={obj.amount}
+                        date={obj.date}
+                    />
+                ))}
+            </ExpensesStyled>
+        </>
     );
 };
 

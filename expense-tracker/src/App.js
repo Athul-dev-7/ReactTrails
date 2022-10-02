@@ -1,7 +1,11 @@
+import React, { useState } from 'react';
+import ExpenseFilter from './components/ExpenseFilter';
 import Expenses from './components/Expenses';
 import NewExpense from './components/NewExpense';
 
 const App = () => {
+    const [filteredYear, setFilteredYear] = useState('2022');
+
     const expenses = [
         {
             id: 'e1',
@@ -33,13 +37,21 @@ const App = () => {
         console.log(expense);
     };
 
+    const filterChangehandler = (selectedYear) => {
+        setFilteredYear(selectedYear);
+    };
+
     return (
-        <>
+        <div className="wrapper">
             <NewExpense onAddExpense={addExpenseHandler} />
-            {expenses.map((obj) => (
-                <Expenses items={obj} />
-            ))}
-        </>
+            <div className="container">
+                <ExpenseFilter
+                    selected={filteredYear}
+                    onFilterChange={filterChangehandler}
+                />
+                <Expenses items={expenses} />
+            </div>
+        </div>
     );
 };
 
