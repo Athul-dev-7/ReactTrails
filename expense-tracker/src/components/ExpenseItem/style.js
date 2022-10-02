@@ -23,7 +23,7 @@ const ExpenseItemStyled = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         flex: 1;
 
         .expense-item h2 {
