@@ -8,6 +8,7 @@ const Expenses = (props) => {
             <ExpensesStyled>
                 {props.items.map((obj) => (
                     <ExpenseItem
+                        key={obj.id}
                         title={obj.title}
                         amount={obj.amount}
                         date={obj.date}
