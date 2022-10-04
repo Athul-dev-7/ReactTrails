@@ -3,20 +3,21 @@ import ExpenseItem from '../ExpenseItem';
 import ExpensesStyled from './style';
 
 const Expenses = (props) => {
-    return (
-        <>
-            <ExpensesStyled>
-                {props.items.map((obj) => (
-                    <ExpenseItem
-                        key={obj.id}
-                        title={obj.title}
-                        amount={obj.amount}
-                        date={obj.date}
-                    />
-                ))}
-            </ExpensesStyled>
-        </>
-    );
+    let expenseContent = <p>No Expenses Found.</p>;
+    if (props.items.length > 0) {
+        expenseContent =
+            props.items.length > 0 &&
+            props.items.map((obj) => (
+                <ExpenseItem
+                    key={obj.id}
+                    title={obj.title}
+                    amount={obj.amount}
+                    date={obj.date}
+                />
+            ));
+    }
+
+    return <ExpensesStyled>{expenseContent}</ExpensesStyled>;
 };
 
 export default Expenses;

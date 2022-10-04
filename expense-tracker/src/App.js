@@ -34,7 +34,6 @@ const App = () => {
     const [filteredYear, setFilteredYear] = useState('2022');
 
     const addExpenseHandler = (expense) => {
-        console.log(expense);
         setExpenses((prevExpenses) => {
             return [expense, ...prevExpenses];
         });
@@ -44,6 +43,10 @@ const App = () => {
         setFilteredYear(selectedYear);
     };
 
+    const filteredExpenses = expenses.filter((expense) => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
+
     return (
         <div className="wrapper">
             <NewExpense onAddExpense={addExpenseHandler} />
@@ -52,7 +55,7 @@ const App = () => {
                     selected={filteredYear}
                     onFilterChange={filterChangehandler}
                 />
-                <Expenses items={expenses} />
+                <Expenses items={filteredExpenses} />
             </div>
         </div>
     );
