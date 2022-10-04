@@ -55,4 +55,8 @@ export default styled.div`
             background-color: #ddb3f8;
         }
     }
+
+    .add-expense {
+        text-align: center;
+    }
 `;

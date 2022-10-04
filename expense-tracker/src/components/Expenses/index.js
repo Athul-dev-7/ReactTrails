@@ -3,7 +3,7 @@ import ExpenseItem from '../ExpenseItem';
 import ExpensesStyled from './style';
 
 const Expenses = (props) => {
-    let expenseContent = <p>No Expenses Found.</p>;
+    let expenseContent = <p className="no-expense">No Expenses Found</p>;
     if (props.items.length > 0) {
         expenseContent =
             props.items.length > 0 &&
