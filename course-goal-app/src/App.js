@@ -6,8 +6,14 @@ import './App.css';
 
 const App = () => {
     const [courseGoals, setCourseGoals] = useState([
-        { text: 'Do all exercises!', id: 'g1' },
-        { text: 'Finish the course!', id: 'g2' },
+        {
+            text: 'Do all exercises!',
+            id: Math.round(Math.random() * 100).toString(),
+        },
+        {
+            text: 'Finish the course!',
+            id: Math.round(Math.random() * 100).toString(),
+        },
     ]);
 
     const addGoalHandler = (enteredText) => {
@@ -15,7 +21,7 @@ const App = () => {
             const updatedGoals = [...prevGoals];
             updatedGoals.unshift({
                 text: enteredText,
-                id: Math.random().toString(),
+                id: Math.round(Math.random() * 100).toString(),
             });
             return updatedGoals;
         });
