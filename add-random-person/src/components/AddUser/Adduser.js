@@ -5,8 +5,10 @@ import Button from '../Button/Button';
 import ErrorModal from '../ErrorModal/ErrorModal';
 
 const AddUser = (props) => {
-    // useRefs are usefull only when we are reading from DOM element but not for writing into the DOM.
-    // useStates are usefull for reading and writing, but not directly to the DOM
+    // useRefs are usefull only when we are reading directly from DOM element but not (except small cases as we are doing down below to update the inputs to blank)for writing into the DOM. These manipulated elements are `UNCONTROLLED components` as they are accessed directly not via React.
+
+    // useStates are usefull for reading and writing, but not directly to the DOM. These manipulated elements are `CONTROLLED components` as they are accessed directly not via React.
+
     const nameInputRef = useRef();
     const ageInputRef = useRef();
 
