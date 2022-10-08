@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import styles from './AddUser.module.css';
 
 const AddUser = () => {
     const addUserhandler = (event) => {
@@ -7,7 +8,7 @@ const AddUser = () => {
     };
 
     return (
-        <Card>
+        <Card className={styles.input}>
             <form onSubmit={addUserhandler}>
                 <label htmlFor="username">UserName</label>
                 <input id="username" type="text" />
