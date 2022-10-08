@@ -57,7 +57,6 @@ const AddUser = (props) => {
                         type="text"
                         onChange={userNameChangeHandler}
                         value={enteredName}
-                        required
                     />
                     <label htmlFor="age">Age</label>
                     <input
@@ -65,7 +64,6 @@ const AddUser = (props) => {
                         type="number"
                         onChange={ageChangeHandler}
                         value={enteredAge}
-                        required
                     />
                     <Button type="submit">Add User</Button>
                 </form>
