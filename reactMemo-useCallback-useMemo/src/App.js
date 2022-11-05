@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Button from './components/UI/Button/Button';
 import DemoOutput from './components/Demo/DemoOutput';
 import './App.css';
@@ -8,14 +8,10 @@ function App() {
 
     console.log('APP RUNNING');
 
-    const toggleParagraphHandler = () => {
+    // Preventing function Re-Creation with useCallback()
+    const toggleParagraphHandler = useCallback(() => {
         setShowParagraph((prevState) => !prevState);
-    };
-
-    /**
-     Onclicking the button, we can see the DOM changes only on <p>.
-     *
-     */
+    }, []);
 
     return (
         <div className="app">

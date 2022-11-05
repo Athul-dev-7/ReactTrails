@@ -16,4 +16,5 @@ const Button = (props) => {
     );
 };
 
-export default Button;
+// Preventing unnecessary Re-Evaluation with React.memo()
+export default React.memo(Button);
