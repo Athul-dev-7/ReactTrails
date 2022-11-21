@@ -4,6 +4,7 @@ import classes from './TaskForm.module.css';
 
 const TaskForm = (props) => {
     const taskInputRef = useRef();
+    console.log(taskInputRef);
 
     const submitHandler = (event) => {
         event.preventDefault();
