@@ -4,8 +4,13 @@ const SimpleInput = (props) => {
     const nameInputRef = useRef();
 
     const formSubmissionHandler = (event) => {
-        event.preventdefault();
-        setEnteredName(nameInputRef.current.value);
+        event.preventDefault();
+        if (enteredName.trim() === '') {
+            return;
+        }
+        console.log(enteredName);
+        const enteredValue = nameInputRef.current.value;
+        console.log(enteredValue);
         setEnteredName('');
     };
     const inputChangeHandler = (event) => {
