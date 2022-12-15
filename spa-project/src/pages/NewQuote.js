@@ -5,7 +5,9 @@ const NewQuote = () => {
     const history = useHistory();
     const addQuoteHandler = (quoteData) => {
         console.log(quoteData);
-        history.push('/quotes');
+        history.push({
+            pathname: `/quotes`,
+        });
     };
     return <QuoteForm onAddQuote={addQuoteHandler} />;
 };
