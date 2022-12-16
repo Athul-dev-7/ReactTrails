@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react';
-import { Prompt } from 'react-router-dom';
+import { useRef } from 'react';
+// import { Prompt } from 'react-router-dom';
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
 
 const QuoteForm = (props) => {
-    const [isEntering, setIsEntering] = useState(false);
+    // const [isEntering, setIsEntering] = useState(false);
     const authorInputRef = useRef();
     const textInputRef = useRef();
 
@@ -20,18 +20,18 @@ const QuoteForm = (props) => {
         props.onAddQuote({ author: enteredAuthor, text: enteredText });
     }
     const formFocusedHandler = () => {
-        setIsEntering(true);
+        // setIsEntering(true);
     };
     const finishEnteringHandler = () => {
-        setIsEntering(false);
+        // setIsEntering(false);
     };
 
     return (
         <>
-            <Prompt
+            {/* <Prompt
                 when={isEntering}
                 message="Are you sure you want to leave the page? All your entered data will be lost!"
-            />
+            /> */}
             <Card>
                 <form
                     onFocus={formFocusedHandler}
